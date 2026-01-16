@@ -19,7 +19,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: [nodeJS-ec2]
+    runs-on: [nodeJS]
     steps:
       - name: Pull image from Docker Hub
         run: docker pull ashrafbilalmohaidat/cicdapplication:latest
