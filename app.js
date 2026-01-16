@@ -114,5 +114,5 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n========================================`);
   console.log(`Server running on http://0.0.0.0:${PORT}`);
   console.log(`========================================\n`);
-  console.log(`Open your browser and go to: http://<PUBLIC_IP>:${PORT}\n`);
+  console.log(`Open your browser and go to: http://100.48.206.203:${PORT}\n`);
 });
