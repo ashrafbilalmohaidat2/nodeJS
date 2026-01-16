@@ -31,5 +31,4 @@ jobe:
         uses: docker rm -f cicdapplication-container
       - name: Run Docker container
         uses: docker run -d -p 5000:5000 --name cicdapplication-container ashrafbilalmohaidat/cicdapplication:latest
-
         
