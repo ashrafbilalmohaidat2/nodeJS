@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
-const PORT = 3002;
+const PORT = 5000;
 
 // Middleware
 app.use(express.json());
@@ -112,7 +112,7 @@ app.delete('/api/tasks/:id', (req, res) => {
 // Start server
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n========================================`);
-  console.log(`Server running on ${PORT}`);
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
   console.log(`========================================\n`);
   console.log(`Open your browser and go to: http://100.48.206.203:${PORT}\n`);
 });

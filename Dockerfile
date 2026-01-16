@@ -7,7 +7,7 @@ COPY  package*.json ./
 RUN npm install
 #It copy everything into image
 COPY . .
-EXPOSE 3002
+EXPOSE 5000
 #It specifies the command to run the application
 CMD [ "npm", "run", "start" ]
 
