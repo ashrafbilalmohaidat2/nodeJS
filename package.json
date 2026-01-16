@@ -1,0 +1,15 @@
+{
+  "name": "simple-data-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js app to display data",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

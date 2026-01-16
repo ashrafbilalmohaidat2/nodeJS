@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Task Manager</h1>
+            <p class="subtitle">Manage your tasks efficiently</p>
+        </header>
+
+        <div class="add-task-section">
+            <form id="taskForm">
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="title" 
+                        placeholder="Enter task title..." 
+                        required
+                    >
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <textarea 
+                            id="description" 
+                            placeholder="Enter task description..." 
+                            rows="2"
+                        ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <select id="priority">
+                            <option value="low">Low Priority</option>
+                            <option value="medium" selected>Medium Priority</option>
+                            <option value="high">High Priority</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </form>
+        </div>
+
+        <div class="tasks-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <div id="tasksList" class="tasks-list">
+                <p class="empty-message">No tasks yet. Add one to get started! 🚀</p>
+            </div>
+        </div>
+
+        <div class="stats">
+            <span>Total: <strong id="totalTasks">0</strong></span>
+            <span>Completed: <strong id="completedTasks">0</strong></span>
+            <span>Pending: <strong id="pendingTasks">0</strong></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

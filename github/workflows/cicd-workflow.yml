@@ -1,0 +1,35 @@
+name: CICD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobe:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+      - name: Login to Docker Hub
+        uses: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} 
+      - name: Build Docker image
+        run: docker build -t ashrafbilalmohaidat/cicdapplication .
+      - name: Publish Docker image to Docker Hub
+        run: docker push ashrafbilalmohaidat/cicdapplication:latest
+
+  deploy:
+    needs: build
+    runs-on: [nodeJS]
+    steps:
+      - name: Pull image from Docker Hub
+        uses: docker pull ashrafbilalmohaidat/cicdapplication:latest
+      - name: Delete old container
+        uses: docker rm -f cicdapplication-container
+      - name: Run Docker container
+        uses: docker run -d -p 5000:5000 --name cicdapplication-container ashrafbilalmohaidat/cicdapplication:latest
+
+        
